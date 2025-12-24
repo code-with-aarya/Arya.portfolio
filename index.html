@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>responsive portfolio website</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="style.css" >
+<style type="text/css">
+*{
+    margin:0;
+padding:0;
+box-sizing:border-box;
+}     
+  /* == navbar ==*/
+   .nav{
+        background:#1e5cb3;
+        display:flex;
+        justify-content:space-around;
+        align-items:center;
+        padding:10px  ;
+        position:sticky;
+        top:0;
+        z-index:200;
+        width:100%;
+        }
+     
+ .nav   h3{
+       color:white;
+       border:1.5px solid gray;
+       padding:2px 10px ;
+       border-radius:5px;
+       font-size:25px;
+       cursor:pointer;
+       }
+     .main-menu {
+        color:blue;
+     
+     }
+   .nav   ul {
+      display:flex;
+     justify-content:space-around;
+      align-items:center;
+      gap:20px; 
+          
+      }
+   ul li{
+      list-style:none;
+      
+      }
+    ul li a{
+         text-decoration:none;
+      color:white;
+      font-weight:500;
+        font-size:20px;
+      }
+   ul li a:hover{
+   text-decoration:underline;
+   text-underline-offset:6px;
+   
+   transition:0.5s;
+   }
+    .openbtn ,  .closebtn {
+        display:none;
+        color:white;
+        
+        }
+        
+   @media(max-width:768px){
+       .nav{
+             display:flex;
+             justify-content:space-between;
+             align-items:center;
+           height:50px;
+           position:relative;
+             }
+        .nav h3{
+             
+             font-size:20px;
+             
+             
+             }
+        .openbtn{
+            display:block;
+            font-weight:600;
+            font-size:23px;
+            margin-right:15px;
+            
+            }
+          .closebtn{
+          display:none;
+          font-weight:600;
+          font-size:23px;
+          margin-right:15px;
+          
+          }
+     
+        #menu{
+             display:none;   
+flex-direction:column;            
+            width:100%;
+            position:absolute;
+            top:50px;
+          background:#1e6cb3;
+          right:0;
+            padding:5px;
+       transition:all 0.4s ease;
+            }
+       #menu.active {
+    display:flex;
+  }
+     #menu li a {
+        padding:5px 5px;  
+         display:block;
+         font-size:18px;
+        }        
+}
+      /* == HERO SECTION == */
+  
+      .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      column-gap: 60px;
+      min-height: 260px;
+      margin-bottom: 60px;
+      background:#032042;
+      padding: 50px 60px;
+      }
+      .hero-text h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      color:white;
+      }
+      .hero-text h1 strong {
+      color:#1e5cb3;
+      }
+      .hero-text h2 {
+      font-size: 22px;
+      margin-bottom: 25px;
+      font-weight: normal;
+      color:white;
+      }
+      
+      .hero-buttons {
+      display: flex;
+      gap: 25px;
+      }
+      
+      .hero-buttons  .btn {
+      padding: 10px 20px;
+      border: 1.5px solid white;
+      background: #032042;
+      cursor: pointer;
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+      border-radius:8px;
+      font-weight:600;
+      }
+      
+      .hero-buttons   .btn:hover {
+      background: #1e5cb3;
+      color: #032042;
+      }
+      
+      .hero-photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 2px solid white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      }
+      .hero-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:50%;
+      }
+      
+      @media (max-width: 768px) {
+      
+      .hero {
+      flex-direction: column-reverse;
+      text-align: center;
+      gap: 20px;
+      }
+      
+      .hero-text h1 {
+      font-size: 30px;
+      }
+      
+      .hero-text h2 {
+      font-size: 25px;
+      
+      }
+      
+      .hero-buttons {
+      justify-content: center;
+      flex-wrap: wrap;
+      }
+      
+      .hero-photo {
+      width: 150px;
+      height: 150px;
+      }
+      
+      .hero-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:50%;
+      }
+      }
+          /*  ===  about section == */
+         
+         /* .about{
+               
+          }*/
+          
+       .about .section-title{
+          font-size:28px;
+          font-weight:700;
+          text-align:center;
+          color:#1e5cb3;
+          text-decoration:underline;
+          text-underline-offset:5px;
+          }
+          
+          
+          .about-card{
+          background:#fff;
+          max-width:1000px;
+          width:100%;
+          margin:10px 0;
+          border-radius:16px;
+          box-shadow:0 10px 25px rgba(0,0,0,0.1);
+          text-align:center;
+          padding:40px 65px;
+          display:flex;
+          flex-direction:row;
+          align-items:center;
+          justify-content:space-around;
+          gap:70px;
+          }
+          
+          .image-wrapper{
+          max-width:300px;
+          max-height:400px;
+          margin:0 auto 20px;
+          border-radius:16px;
+          overflow:visible;
+          background:#1e5cb3;
+    transition:transform 0.8s ease;
+       transform:rotate(10deg);
+          }
+          .image-wrapper:hover {
+          transform:rotate(-10deg);
+          
+          }
+          .image-wrapper img{
+          width:100%;
+          height:100%;
+          object-fit:cover;
+          box-shadow:2px 4px  8px black;
+          border-radius:16px;
+          transform: rotate(-10deg);
+          
+          }
+          .image-wrapper img:hover{
+          
+          transform:rotate(10deg);
+          }
+          
+          .name{
+          font-size:25px;
+          margin-bottom:10px;
+          margin-left:10px;
+          text-align:left;
+          color:#1e5cb3;
+          }
+          
+          .description{
+          font-size:17px;
+          color:#555;
+          margin-top:-7px;
+          margin-bottom:20px;
+          line-height:1.6;
+          }
+          
+          .info-box{
+          display:flex;
+          align-items:flex-start;
+          gap:12px;
+          border:2px solid #1e5cb3;
+          border-radius:12px;
+          padding:12px;
+          margin-bottom:12px;
+          text-align:left;
+          }
+          
+          .info-box i{
+          color:#1e5cb3;
+          font-size:18px;
+          margin-top:4px;
+          }
+          
+          .info-box strong{
+          display:block;
+          font-size:14px;
+          }
+          .info-box strong a{
+         color:#1e5cb3;
+         text-decoration:none;
+         cursor:pointer;      
+          }
+          .info-box span{
+          font-size:13px;
+          color:#555;
+          }
+          
+          /* Responsive for small phones */
+          @media (max-width:768px){
+          
+          .about-card{
+          
+          display:flex;
+          flex-direction:column;
+          align-items:center;
+          justify-content:space-around;
+          gap:30px;
+          }
+          
+          .image-wrapper{
+          width:200px;
+          height:250px;
+          }
+          
+          .description{
+          font-size:15px;
+          line-height:1.4;
+          
+          }
+          .section-title{
+          font-size:24px;
+          }
+          }
+          
+        /* == academics section == */
+        
+      .academics{
+      padding:30px 0;
+      max-width:100%;
+      margin:auto;
+      text-align:center;
+      }
+      
+      .academics h2{
+      font-size:26px;
+      color:#1e5cb3;
+      text-decoration:underline;
+      text-underline-offset:10px;
+      
+      margin-bottom:25px;
+      }
+      
+      
+      
+      .academics-box {
+      background:white;
+      padding:40px 20px 60px 20px;
+      width:100%;
+      border-radius:7px;
+      box-shadow:0 12px 25px rgba(0,0,0,0.1);
+      
+      }
+      
+      /* ================= BUTTONS ================= */
+      
+      .semester-buttons{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:12px;
+      margin-bottom:25px;
+      border:2px solid black;
+      border-radius:10px;
+      padding:30px 10px;
+      background:#1e5cb3;
+      }
+      
+      .semester-buttons button{
+      width:200px;
+      padding:10px;
+      border:2px solid #fff;
+      background:#032042;
+      border-radius:30px;
+      cursor:pointer;
+      font-size:15px;
+      font-weight:600;
+      color:#fff;
+      }
+      
+      .semester-buttons button:hover{
+      background:#fff;
+      color:#000;
+      }
+      
+      /* ================= DETAILS ================= */
+      
+      .semester-details{
+      display:flex;
+      justify-content:space-around;
+      flex-wrap:wrap;
+      gap:10px;
+      border:2px solid #000;
+      padding:20px;
+      text-align:left;
+      border-radius:10px;
+      background:#1e5cb3;
+      }
+      
+      .syllabus,
+      .result{
+      flex:1;
+      }
+      
+      .semester-details h3{
+      margin-bottom:10px;
+      color:#000;
+      }
+      
+      .semester-details ul{
+      padding-left:20px;
+      color:white;
+      display:inline-block;
+      }
+      
+      .semester-details li{
+      margin-bottom:6px;
+      list-style:disc;
+      }
+      
+      /* ================= MOBILE ================= */
+      
+      @media (max-width:768px){
+      
+      .academics h2{
+      font-size:22px;
+      }
+      
+      .semester-buttons button{
+      
+      width:140px;
+      font-size:14px;
+      }
+      
+      
+      
+      .semester-details{
+      display:flex;
+      flex-direction:column;
+      justify-content:space-around;       
+      gap:10px;       
+      padding:20px;            
+      background:#1e5cb3;
+      }
+      }
+     /* == college section == */
+      .college{
+      
+      padding:10px 0;
+      max-width:1100px;
+      margin:auto;
+      text-align:center;
+      }
+      
+      .section-title{
+      font-size:28px;
+      margin-bottom:10px;
+      color:#1e5cb3;
+      }
+      
+      
+      /* ===== Layout ===== */
+      
+      .top-cards{
+      display:flex;
+      column-gap:80px;
+      justify-content:center;
+      align-items:flex-start;
+      margin-bottom:50px;
+      
+      }
+      
+      
+      /* ===== Card ===== */
+      
+      .card{
+      background:linear-gradient(90deg,#0b3c6f,#1e5cb3);
+      border-radius:16px;
+      padding:0  ;
+      width:100%;
+      max-width:300px;
+      height:360px;
+      border-radius:10px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.1);
+      border:2px solid #1e5cb3;
+     overflow:hidden; 
+      }
+      
+      .hod strong{
+      width:100%;
+      display:block;
+      background: #032042;
+      color:#fff;
+      padding:10px;
+      margin:0 0 20px 0;
+      border-radius:8px 8px 0 0;
+      font-size:20px;
+      }
+      .principal{
+     
+      color:white;
+      
+      }
+      
+      .card-header{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      font-weight:600;
+      margin-bottom:20px;
+      padding:10px;
+      color:white;
+      background:#032042;
+      border-radius:8px  8px 0 0 ;
+      }
+      .card-header span{
+      font-size:20px;
+      
+      }
+      /* ===== Profile Image ===== */
+      
+      .profile-img{
+      width:140px;
+      height:140px;
+      margin:0 auto 15px;
+      border-radius:50%;
+      overflow:hidden;
+      border:2px solid white;
+      }
+      
+     
+      .profile-img img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      }
+      
+      .card h3{
+      margin-bottom:10px;
+      
+      
+      }
+      
+      .role{
+      font-size:14px;
+      color:white;
+      }
+      
+      .principal .role{
+      color:#dbe9ff;
+      }
+      
+      .quote{
+      background:#fff;
+      color:#333;
+      margin-top:20px;
+      padding:15px;
+      border-radius:0 0 8px 8px;
+      font-style:italic;
+      font-size:14px;
+          
+      }
+     
+      .faculty{
+      display:flex;
+      justify-content:space-around;
+      row-gap:50px;
+      flex-wrap:wrap;
+      background:#1e5cb3;
+      padding:40px;
+      border-radius:15px;
+      }
+      .faculty-card {
+      background:rgb(240,240,240);
+      border-radius:16px;
+      padding:20px  ;
+      width:100%;
+      max-width:250px;
+      border-radius:10px;
+      box-shadow:1px 1px 10px 1px rgba(0,0,0,0.4);
+      border:2px solid #000;
+      }
+      .faculty-card .profile-img{
+      width:140px;
+      height:140px;
+      margin:0 auto 15px;
+      border-radius:50%;
+      overflow:hidden;
+      border:2.5px solid #1e5cb3;
+      transition:0.4s;
+      }
+    .faculty-card .profile-img:hover{   
+    transform:scale(1.1);
+    
+    filter: grayscale(1%);
+    }
+      .faculty-card h3{
+      color:#092044;
+      padding:5px;
+      }
+      .faculty-card p{
+      color:gray;
+      padding:5px;
+      text-transform:capitalize;
+      }
+      /*  === campus photo ==== */
+    .college  h2{
+      text-align:center;
+      color:#032042;
+      padding:40px ;
+      text-transform:capitalize;
+      text-decoration:underline;
+      text-underline-offset:10px;
+      }
+      .campus-photo {
+      display:flex;
+      justify-content:space-around;
+      gap:10px;
+      flex-wrap:wrap;
+      }
+      .campus-photo img{
+      width:300px;
+      height:200px;
+      border-radius:10px;
+      filter:grayscale(100%);
+      transition:0.6s;
+      }
+      .campus-photo img:hover{
+      transform:scale(1.05);
+      filter: grayscale(1%);
+      }
+      
+      /* ===== Responsive ===== */
+      
+      @media (max-width:768px){
+      
+      .top-cards{
+      flex-direction:column;
+      align-items:center;
+      row-gap:30px;
+      }
+      
+      .section-title{
+      font-size:24px;
+      }
+      
+      .profile-img{
+      width:150px;
+      height:150px;
+      }
+      
+    
+      
+      .faculty{
+      display:flex;
+      flex-direction:column;
+      justify-content:space-around;
+      align-items:center;
+      gap:30px;
+      
+      }
+      .campus-photo {
+      display:flex;
+      flex-direction:column;
+      justify-content:space-around;
+      align-items:center;
+      gap:30px;
+      }
+      
+      }
+      
+      /*  skill section ===  */
+      .skills{
+      max-width:1000px;
+      margin:40px auto 20px auto;
+      padding:80px 0;
+      }
+      
+      .skills h2{
+      text-align:center;
+      font-size:32px;
+      margin-bottom:30px;
+      text-decoration:underline;
+      text-underline-offset:10px;
+      text-decoration-thickness:3px;
+      
+      }
+      
+    
+      
+      /* ===== Skill Card ===== */
+      
+      .skill-card-box {
+      background:#1e5cb3;
+      padding:20px;
+      border-radius:10px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:20px;
+      flex-wrap:wrap;
+      
+      
+      }
+      .skill-card{
+      width:280px;
+      background:#fff;
+      padding:20px;
+      border-radius:14px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.08);
+      margin-bottom:20px;
+      }
+      
+      .skill-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:12px;
+      }
+      
+      .skill-header h3{
+      font-size:18px;
+      }
+      
+      .skill-header span{
+      font-weight:700;
+      color:#1e5cb3;
+      }
+      
+      /* ===== Progress Bar ===== */
+      
+      .progress{
+      width:100%;
+      height:10px;
+      background:#d9dbe1;
+      border-radius:20px;
+      overflow:hidden;
+      }
+      
+      .progress-bar{
+      height:100%;
+      background:linear-gradient(90deg,#0b3c6f,#1e5cb3);
+      border-radius:20px;
+      }
+      
+      /* ===== Responsive skills section  ===== */
+      
+      @media (max-width:768px){
+      .skills h2{
+      font-size:26px;
+      }
+      .skill-card-box {
+      display:flex;
+      flex-direction:column;
+      
+      
+      }
+      .skill-header h3{
+      font-size:16px;
+      }
+      }
+      
+     /* == project section == */
+      .projects {
+      padding: 60px 0;
+      background: #fff;
+      text-align: center;
+      }
+      
+      .section-title {
+      font-size: 32px;
+      margin-bottom: 30px;
+      text-underline-offset:13px;
+      }
+      
+   
+      .project-container {
+      background:#032042;
+      display:flex;
+      flex-direction:row;
+      justify-content:space-around;
+      align-items:center;
+      max-width: 1000px;
+      margin: auto;
+      flex-wrap:wrap;
+      column-gap:20px;
+      padding:50px 30px;
+      }
+      
+      .project-card {
+      border: 2px solid #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      width:280px; 
+     height:400px;
+      
+      }
+      
+      .project-card img {
+      width: 100%;      
+      height:180px;
+      cursor:pointer;
+      }
+      
+      .project-content {
+      background:#1e5cb3;
+      padding: 25px;
+      text-align: left;
+      height:100%;
+      }
+      
+      .project-content h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      text-transform:capitalize;
+      }
+      
+      .project-content p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+      color: #fff;
+      font-size:14px;
+      }
+      
+      
+      
+      .project-buttons {
+      display: flex;
+      gap: 15px;
+      }
+      
+  .project-buttons  .btn {
+      padding: 5px 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size:14px;
+      }
+     
+      .btn.code {
+      background: white;
+      color: #0d1b2a;
+      border: 2px solid black;
+      }
+      
+      .btn.demo {
+      border: 1.5px solid #ffff;
+      color: #fff;
+      background:#0d1b2a;
+      }
+      
+      /* Responsive */
+      @media (max-width: 768px) {
+      
+      .project-container {
+      display:flex;
+      flex-direction:column;
+      justify-content:space-around;
+      align-items:center;
+      gap:30px;
+      }
+      .project-card {
+      
+      width:280px;
+      height:400px;
+      }
+     .project-card img {
+      width: 100%;
+      
+      height:200px;
+      cursor:pointer;
+      }
+      .project-content {
+      text-align: center;
+      height:100%;
+      }
+      
+      .project-buttons {
+      justify-content: center;
+      }
+      }
+    /* Contact Section */
+  #contact {
+  max-width: 750px;
+  margin: 0 auto 80px auto;
+  padding: 20px 20px 60px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+  padding:60px;   
+  border-radius: 20px;
+  }
+    
+    #contact .section-title {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: #0a1a33;
+    text-underline-offset:6px;
+    }
+    
+    .contact-text {
+    text-align: center;
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 30px;
+    }
+    
+    /* Contact Card Box */
+    .contact-card {
+    border: 1.5px solid #c9d7e8;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+    background: white;
+    }
+    
+    /* Header */
+    .contact-header {
+    background: #032b63;
+    padding: 15px 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    }
+    
+    .contact-title {
+    font-size: 16px;
+    }
+    
+    .contact-icon {
+    font-size: 20px;
+    }
+    
+    /* Form */
+    form {
+    padding: 25px;
+    }
+    
+    .form-label {
+    font-size: 14px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+    color: #0a1a33;
+    }
+    
+   form i  {
+    margin-right: 5px;
+    }
+    
+    /* Inputs */
+    .form-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.4px solid #d1d6e0;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    font-size: 14px;
+    }
+    
+    .form-input:focus {
+    border-color: #0a61d8;
+    outline: none;
+    }
+    
+    /* Textarea */
+    .textarea {
+    height: 160px;
+    resize: none;
+    }
+    
+    /* Submit Button */
+    .submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: #032b63;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    }
+    
+    .submit-btn:hover {
+    background: #063b8a;
+    }
+    @media(   max-width:768px){
+    #contact {
+    max-width: 750px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+    padding:30px;   
+    border-radius: 20px;
+    }
+    .form-input {
+    width: 100%;
+    
+    }
+    }
+     
+    /* Footer section */
+    #footer {
+    background: #032042;
+    color: #e8eef6;
+    padding: 50px 25px;
+    margin-top: 20px;
+    }
+    
+    .footer-container {
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    gap:30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    }
+    
+    .footer-title {
+    font-size: 24px;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: white;
+    }
+    
+    .footer-text {
+    font-size: 15px;
+    margin-bottom: 4px;
+    }
+    
+    .footer-subtext {
+    font-size: 14px;
+    color: #b9c7d8;
+    }
+    
+    .footer-heading {
+    font-size: 18px;
+    margin-top: 35px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: white;
+    }
+    
+    /* Quick Links */
+    .footer-links {
+    display:flex;
+    flex-direction:column;
+    list-style: none;
+    padding: 0;
+    
+    }
+    
+    .footer-links li {
+    margin-bottom: 0;
+    }
+    
+    .footer-links a {
+    text-decoration: none;
+    color: #dce6f4;
+    font-size: 15px;
+    font-weight:600;
+    }
+    
+    .footer-links a:hover {
+    text-decoration: underline;
+    }
+    
+    /* Social Icons */
+    .social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    }
+    
+    .social-btn {
+    width: 48px;
+    height: 48px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f1f1f1;
+    font-size: 22px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    }
+    
+    .social-btn:hover {
+    background: rgba(255,255,255,0.2);
+    }
+    @media(max-width:768px){
+    .footer-container {
+    display:flex;
+    flex-direction:column;       
+    gap:10px;   
+    align-items: flex-start;
+    text-align: left;
+    }
+    .footer-links li {
+    margin-bottom: 0;
+    
+    }
+    }
+    
+    
+    
+</style>
+</head>
+<body>
+      <!-- navbar -->  
+<nav class="nav" id="nav">
+      <h3>Arya</h3>
+      <div class="main-menu" >
+      
+      <span class="openbtn"   onclick="openmenu()" ><i class="fa-solid fa-bars"></i></span>
+      <span class="closebtn" onclick="closemenu()"> <i class="fa-solid fa-xmark"></i></span>
+      
+<ul id="menu" >
+
+  <li><a href="#hero" class="active">Home</a></li>
+ <li> <a href="#about">about </a></li>
+ <li> <a href="#academics">academics</a></li>
+ <li> <a href="#college">college</a></li>
+ <li> <a href="#skills">skill</a></li>
+ <li> <a href="#projects">project</a></li>
+ <li> <a href="#contact">contact</a></li>
+      
+</ul>
+</div>
+</nav>
+
+  <!--   hero section -->
+  <section class="hero"  id="hero" >
+  <div class="hero-text">
+    <h1>Hello, I'm <strong>Arya</strong></h1>
+    <h2>Fullstack web developer</h2>
+   <div class="hero-buttons">
+    <a href="Anshuman.resume.jpg" class="btn" download=""  target="_blank">Download resume <i class="fa-solid fa-download"></i></a>
+    <a href="#contact" class="btn">Contact me</a></div>
+  </div>
+  <div class="hero-photo" >
+  <img src="anshu.jpg" >
+  
+  </div>
+  
+        
+  </section>
+  
+       <!-- == about section == -->
+       
+       <section class="about" id="about" >
+       <h2 class="section-title">About Me</h2>
+   
+       
+       <div class="about-card"  >
+       
+       <div class="image-wrapper">
+       
+       <img src="anshu.jpg" alt="Profile Photo">
+       </div>
+       
+       
+       
+       
+       <div class="text-about" >
+       <h3 class="name">Arya</h3>
+       
+       <p class="description">
+       Hi, I’m Arya, a diploma student and
+       beginner web developer skilled in HTML,
+       CSS, JavaScript, and PHP. I enjoy building simple, responsive 
+       websites and learning continuously.
+       </p>
+       
+       <div class="info-box">
+       <i class="fa-solid fa-graduation-cap"></i>
+       <div>
+       
+       <strong><a href="http://www.mjpgpkaushambi.in/" target="_blank" rel="noopener">Diploma in Computer Science & Engineering</a></strong>
+       <span>MJPGP College Teva , Kaushambi</span>
+       </div>
+       </div>
+       
+       
+       
+       <div class="info-box">
+       <i class="fa-solid fa-location-dot"></i>
+       <div>
+       <strong><a href="#" target="_blank" rel="noopener" > Sirathu,kaushambi,uttar pradesh, India</a></strong>
+       </div>
+       </div>
+       
+       <div class="info-box">
+       <i class="fa-solid fa-envelope"></i>
+       <div>
+       <strong><a href="mailto:anshumanpal216476@gmail.com" target="_blank" rel="noopener" >anshumanpal216476@gmail.com</a></strong>
+                  </div>
+       </div>
+       
+       </div>
+       </div>
+       </section>
+       
+        <!-- == academics section == -->   
+        
+        <section class="academics" id="academics">
+        <h2>Academics</h2>
+        <div class="underline"></div>
+        <div  class="academics-box" >
+        <!-- Semester Buttons -->
+        <div class="semester-buttons">
+        <button onclick="showSemester(1)">Semester 1</button>
+        <button onclick="showSemester(2)">Semester 2</button>
+        <button onclick="showSemester(3)">Semester 3</button>
+        <button onclick="showSemester(4)">Semester 4</button>
+        <button onclick="showSemester(5)">Semester 5</button>
+        <button onclick="showSemester(6)">Semester 6</button>
+        </div>
+        
+        <!-- Syllabus + Result (direct show) -->
+        <div class="semester-details" id="details">
+        <div  class="syllabus" >
+        <h3>Syllabus – Semester 1</h3>
+        <ul>
+        <li>Mathematics I</li>
+        <li>Physics</li>
+        <li>Chemistry</li>
+        <li>Communication</li>
+        <li>Engineering</li>
+        </ul>
+        </div>
+        <div class="result" >
+        <h3>Result – Semester 1</h3>
+        <ul>
+        <li>CGPA : 8.2</li>
+        <li>Marks : 72%</li>
+        </ul>
+        </div>
+        </div>
+        </div>
+        </section>
+        
+        
+        <!-- college section  --> 
+        <section class="college" id="college" >
+        
+        <h2 class="section-title">Our College</h2>
+        <div class="underline"></div>
+        
+        <!-- Principal + HOD -->
+        <div class="top-cards">
+        
+        <!-- Principal -->
+        <div class="card principal">
+        <div class="card-header">
+        <span><i class="fa-regular fa-file"></i> Principal's Message</span>
+        </div>
+        
+        <div class="profile-img">
+        <img src="principle.jpg" alt="Principal">
+        </div>
+        
+        <h3>Mr. Sujeet Kumar</h3>
+        <p class="role">Principal</p>
+        
+        <div class="quote">
+        “Fostering excellence in engineering education and research.”
+        </div>
+        </div>
+        
+        <!-- HOD -->
+        
+        <div class="card hod">
+        <strong>Head of Department</strong>
+        <div class="profile-img ">
+        <img src="hod.jpeg" alt="HOD">
+        </div>
+        
+        <h3>Mr. Ravindra kamar</h3>
+        <p class="role">Head of Department - CSE</p>
+        </div>
+        
+        </div>
+        
+        <!-- Faculty -->
+        <h2 class="section-title">Our Faculty</h2>
+        <div class="underline"></div>
+        
+        <div class="faculty">
+        <div class="faculty-card ">
+        <div class="profile-img small">
+        <img src="vivek.jpg" alt="Faculty">
+        </div>
+        
+        <h3>Prof. vivek sir</h3>
+        <p class="role">Professor, Data Structures</p>
+        </div>
+        
+        <div class="faculty-card">
+        <div class="profile-img small">
+        <img src="cn.png" alt="Faculty">
+        </div>
+        
+        <h3>Prof. vishwajeet sir</h3>
+        <p class="role"> computer network</p>
+        </div>
+        
+        <div class="faculty-card">
+        <div class="profile-img small">
+        <img src="jyoti.jpg" alt="Faculty">
+        </div>
+        <h3>Prof. jyoti pal</h3>
+        <p class="role">Web technology</p>
+        </div>
+        
+        <div class="faculty-card">
+        <div class="profile-img small">
+        <img src="gagan.jpg" alt="Faculty">
+        </div>
+        <h3>Prof. Gagandeep </h3>
+        <p class="role"> mathematics </p>
+        </div>
+        
+        <div class="faculty-card">
+        <div class="profile-img small">
+        <img src="communication.coel.jpg" alt="Faculty">
+        </div>
+        <h3>Prof. coel hojra </h3>
+        <p class="role">Communication </p>
+        </div>
+        
+        <div class="faculty-card">
+        <div class="profile-img small">
+        <img src="chemistry.mam.png" alt="Faculty">
+        </div>
+        <h3>Prof. menika mam</h3>
+        <p class="role">Chemistry</p>
+        </div>
+        
+        </div>
+        
+        
+        <h2>campus life</h2>
+        <div class="campus-photo" >
+        
+        <img src="college.jpg" alt="Faculty">
+        <img src="campus.jpg" alt="Faculty">
+        <img src="campus2.jpg" alt="Faculty">
+        
+        </div>
+        </section>
+        
+        <!-- skills section --> 
+        <section class="skills" id="skills" >
+        <h2>Technical Skills</h2>
+     
+        <div  class="skill-card-box" >
+        <div class="skill-card">
+        <div class="skill-header">
+        <h3><i class="fa-brands fa-html5"></i>HTML5</h3>
+        <span>95%</span>
+        </div>
+        <div class="progress">
+        <div class="progress-bar" style="width:95%"></div>
+        </div>
+        </div>
+        
+        <div class="skill-card">
+        <div class="skill-header">
+        <h3><i class="fa-brands fa-css3"></i>CSS3</h3>
+        <span>90%</span>
+        </div>
+        <div class="progress">
+        <div class="progress-bar" style="width:90%"></div>
+        </div>
+        </div>
+        
+        <div class="skill-card">
+        <div class="skill-header">
+        <h3><i class="fa-brands fa-js"></i>JavaScript</h3>
+        <span>35%</span>
+        </div>
+        <div class="progress">
+        <div class="progress-bar" style="width:35%"></div>
+        </div>
+        </div>
+        
+           
+        <div class="skill-card">
+        <div class="skill-header">
+        <h3><i class="fa-brands fa-bootstrap"></i>Bootstrap</h3>
+        <span>80%</span>
+        </div>
+        <div class="progress">
+        <div class="progress-bar" style="width:80%"></div>
+        </div>
+        </div>
+        
+        <div class="skill-card">
+        <div class="skill-header">
+        <h3><i class="fa-solid fa-c"></i>C language</h3>
+        <span>35%</span>
+        </div>
+        <div class="progress">
+        <div class="progress-bar" style="width:35%"></div>
+        </div>
+        </div>
+        
+        <div class="skill-card">
+        <div class="skill-header">
+        <h3><i class="fa-brands fa-python"></i>Python</h3>
+        <span>25%</span>
+        </div>
+        <div class="progress">
+        <div class="progress-bar" style="width:25%"></div>
+        </div>
+        </div>
+        </div>
+        </section>
+        
+        <!-- Project section -->
+        
+        <section class="projects" id="projects">
+        <h2 class="section-title">Projects</h2>
+        
+        <div class="project-container">
+        <!-- Project Card -->
+        <div class="project-card">
+        <img src="portfolio.jpeg" alt="portfolio Project">
+        <div class="project-content">
+        <h3>Portfolio Website</h3>  
+        <p>   this is  about a portfolio website</p>
+        <div class="project-buttons">
+        <a href="index.html" class="btn code"><i class="fa-solid fa-code"></i> Code</a>
+        <a href="#" class="btn demo">view Demo</a>
+        </div>
+        </div>
+        </div>
+        
+        <div class="project-card">
+        <img src="watch.jpg" alt="chess Project">
+        <div class="project-content">
+        <h3>Digital watch</h3>     
+        <p>This project is about digital watch .</p>
+        <div class="project-buttons">
+        <a href="#" class="btn code"><i class="fa-solid fa-code"></i> Code</a>
+        <a href="watch.html" class="btn demo">view Demo</a>
+        </div>
+        </div>
+        </div>
+        
+        <div class="project-card">
+        <img src="contact.png" alt="contact Project">
+        <div class="project-content">
+        <h3>Contact integrated with sheet</h3>
+        <p> this project is about contact form intigrate with google sheet</p>
+        <div class="project-buttons">
+        <a href="#" class="btn code"><i class="fa-solid fa-code"></i> Code</a>
+        <a href="form+google.sheet.html" class="btn demo">view Demo</a>
+        </div>
+        </div>
+        </div>
+        
+        </div>
+        </section>
+        
+    <!-- contact form -->
+    <section id="contact">
+    <h2 class="section-title">Get In Touch</h2>
+    
+    <p class="contact-text">
+    Have a question or want to work together? Feel free to reach out!
+    </p>
+    
+    <div class="contact-card">
+    <div class="contact-header">
+    <span class="contact-icon"><i class="fa-solid fa-envelope"></i></span>
+    <span class="contact-title">Contact Form</span>
+    </div>
+    
+    <form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="a49576ce-5e96-454b-8c40-86d7233d5f0e">
+    
+    <label class="form-label">
+    <span class="form-icon"><i class="fa-solid fa-user"></i></span> Your Name
+    </label>
+    <input type="text" name="name" class="form-input" placeholder="Enter your name" required>
+    
+    <label class="form-label">
+    <span class="form-icon"><i class="fa-solid fa-envelope"></i></span> Your Email
+    </label>
+    <input type="email" name="email" class="form-input" placeholder="Enter your email" required>
+    
+    <label class="form-label">
+    <span class="form-icon"><i class="fa-solid fa-comment"></i></span> Your Message
+    </label>
+    <textarea name="message" class="form-input textarea" placeholder="Write your message here..." required></textarea>
+    
+    <button type="submit" class="submit-btn"> <i class="fa-regular fa-paper-plane"></i> Send Message</button>
+    </form>
+    </div>
+    </section>
+    
+    <!-- footer section --> 
+    <footer id="footer">
+    
+    <div class="footer-container">
+    
+    <!-- Portfolio Info -->
+    <div class="footer-section">
+    <h2 class="footer-title">Portfolio</h2>
+    <p class="footer-text">Arya - Diploma in Technology</p>
+    <p class="footer-subtext">MJPGPK college Tewa</p>
+    <!-- Social Icons -->
+    <h3 class="footer-heading">Connect With Me</h3>
+    <div class="social-icons">
+    <a href="https://github.com/code-with-aarya" target="_blank" class="social-btn" ><i class="fa-brands fa-github"></i></a>  <!-- GitHub -->
+    <a href="#" class="social-btn" target="_blank"><i class="fa-brands fa-linkedin"></i></a>   <!-- LinkedIn -->
+    <a href="https://www.instagram.com/aarya__pal?igsh=MTJrdTdyZzU2MHJ3cw==" class="social-btn" target="_blank"><i class="fa-brands fa-instagram"></i></a>   <!-- Instagram -->
+    <a href="mailto:anshumanpal216476@gmail.com" class="social-btn" target="_blank"><i class="fa-solid fa-envelope"></i> </a>   <!-- Email -->
+    </div>
+    </div>
+    
+    <!-- Quick Links -->
+    <div class="footer-section">
+    <h3 class="footer-heading">Quick Links</h3>
+    <ul class="footer-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#academics">Academics</a></li>
+    <li><a href="#college">College</a></li>
+    <li><a href="#skills">Skill</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+    </ul>
+    </div>
+    
+  
+ 
+    
+    </div>
+    
+    </footer>
+</body>
+<script type="text/javascript">
+
+       // == navbar ==
+let menu = document.getElementById("menu");
+let openbtn = document.querySelector(".openbtn");
+let closebtn = document.querySelector(".closebtn");
+
+function openmenu() {
+  menu.classList.add("active");
+  openbtn.style.display = "none";
+  closebtn.style.display = "block";
+}
+
+function closemenu() {
+  menu.classList.remove("active");
+  openbtn.style.display = "block";
+  closebtn.style.display = "none";
+}
+
+/* ✅ CLOSE MENU ONLY ON MOBILE */
+document.querySelectorAll("#menu a").forEach(link => {
+  link.addEventListener("click", () => {
+    if (window.innerWidth <= 768) {
+      closemenu();
+    }
+  });
+});
+            
+// == academics section ==
+
+ 
+function showSemester(sem){
+  const data = {
+    1:{
+      syllabus:["Mathematics I","Physics","Chemistry","Communication","Engineering"],
+      cgpa:"8.2",
+      marks:"72%"
+    },
+    2:{
+      syllabus:["Mathematics II","FEEE","Environmental Studies","Digital mechanics","IT","Physics II"],
+      cgpa:"8.0",
+      marks:"70%"
+    },
+    3:{
+      syllabus:["Computer network","DBMS","C language","Operating system","Web technology"],
+      cgpa:"pending",
+      marks:"pending"
+    },
+    4:{
+      syllabus:["Data structure using c","Software engineering","E-Governance","python","computer system organization"],
+      cgpa:"pending",
+      marks:"pending"
+    },
+    5:{
+      syllabus:["Web Devlopment (Php)","Python","Software Engineering","IoT","computer architecture"],
+      cgpa:"pending",
+      marks:"pending"
+    },
+    6:{
+      syllabus:["Major Project","Cloud Computing","industrial management","Development of android application","Elective"],
+      cgpa:"pending",
+      marks:"pending"
+    }
+  };
+
+ let html = `
+ <div class="syllabus">
+ <h3>Syllabus – Semester ${sem}</h3>
+ <ul>
+ ${data[sem].syllabus.map(sub => `<li>${sub}</li>`).join("")}
+ </ul>
+ </div>
+ 
+ <div class="result">
+ <h3>Result – Semester ${sem}</h3>
+ <ul>
+ <li>CGPA : ${data[sem].cgpa}</li>
+ <li>Marks : ${data[sem].marks}</li>
+ </ul>
+ </div>
+ `;
+  document.getElementById("details").innerHTML = html;
+};
+</script>
+
+</html>

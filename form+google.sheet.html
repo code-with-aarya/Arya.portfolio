@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style type="text/css">
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+/* Contact Section */
+#contact {
+max-width: 650px;
+margin: 0 auto;
+padding: 20px 20px 60px;
+}
+
+#contact .section-title {
+text-align: center;
+font-size: 30px;
+margin: 30px 15px;
+font-weight: 700;
+color: #0a1a33;
+}
+
+.contact-text {
+text-align: center;
+font-size: 16px;
+color: #444;
+margin-bottom: 30px;
+}
+
+/* Contact Card Box */
+.contact-card {
+border: 1.5px solid #c9d7e8;
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+background: white;
+}
+
+/* Header */
+.contact-header {
+background: #032b63;
+padding: 15px 20px;
+color: white;
+display: flex;
+align-items: center;
+gap: 10px;
+font-weight: 600;
+}
+
+.contact-title {
+font-size: 16px;
+}
+
+.contact-icon {
+font-size: 20px;
+}
+
+/* Form */
+form {
+padding: 25px;
+}
+
+.form-label {
+font-size: 14px;
+font-weight: 600;
+display: block;
+margin-bottom: 5px;
+color: #0a1a33;
+}
+
+.form-icon {
+margin-right: 5px;
+}
+
+/* Inputs */
+.form-input {
+width: 100%;
+padding: 12px 14px;
+border: 1.4px solid #d1d6e0;
+border-radius: 8px;
+margin-bottom: 18px;
+font-size: 14px;
+}
+
+.form-input:focus {
+border-color: #0a61d8;
+outline: none;
+}
+
+/* Textarea */
+.textarea {
+height: 160px;
+resize: none;
+}
+
+/* Submit Button */
+.submit-btn {
+width: 100%;
+padding: 14px;
+background: #032b63;
+color: white;
+font-size: 16px;
+border-radius: 8px;
+border: none;
+cursor: pointer;
+font-weight: 600;
+}
+
+.submit-btn:hover {
+background: #063b8a;
+}
+ 
+   
+</style>
+</head>
+<body>
+<!-- contact form -->
+<section id="contact">
+<h2 class="section-title">Get In Touch ( intigrate with google sheet )</h2>
+
+<p class="contact-text">
+Have a question or want to work together? Feel free to reach out!
+</p>
+
+<div class="contact-card">
+<div class="contact-header">
+<span class="contact-icon">✉️</span>
+<span class="contact-title">Contact Form</span>
+</div>
+
+<form action="https://script.google.com/macros/s/AKfycbyg_vH1edyNKJcl7G-lDNu3tFh1N_wqNmxeTqow6ENnEZk5l1d63jlTO6FQAM4rLWLY/exec" method="POST">
+  <input type="hidden" name="access_key" value="a49576ce-5e96-454b-8c40-86d7233d5f0e">
+
+  <label class="form-label">
+    <span class="form-icon">👤</span> Your Name
+  </label>
+  <input type="text" name="name" class="form-input" placeholder="Enter your name" required>
+
+  <label class="form-label">
+    <span class="form-icon">📧</span> Your Email
+  </label>
+  <input type="email" name="email" class="form-input" placeholder="Enter your email" required>
+
+  <label class="form-label">
+    <span class="form-icon">💬</span> Your Message
+  </label>
+  <textarea name="message" class="form-input textarea" placeholder="Write your message here..." required></textarea>
+
+  <button type="submit" class="submit-btn">📨 Send Message</button>
+</form>
+</div>
+</section>
+</body>
+</html>
