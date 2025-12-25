@@ -1570,7 +1570,56 @@ flex-direction:column;
     
     </footer>
 </body>
+<script src="https://unpkg.com/scrollreveal"></script>
 <script type="text/javascript">
+/* == scrollbar == */
+  const sr = ScrollReveal({
+    distance: '50px',
+    duration: 800,
+    delay: 150,
+    reset: false
+  });
+
+  /* ===== HERO ===== */
+  sr.reveal('.hero-text', { origin: 'left' });
+  sr.reveal('.hero-photo', { origin: 'right' });
+
+  /* ===== ABOUT ===== */
+  sr.reveal('.section-title', { origin: 'top' });
+  sr.reveal('.about-card', { origin: 'bottom' });
+
+  /* ===== ACADEMICS ===== */
+  sr.reveal('.semester-buttons button', {
+    origin: 'bottom',
+    interval: 100
+  });
+  sr.reveal('.semester-details', { origin: 'bottom' });
+
+  /* ===== COLLEGE ===== */
+  sr.reveal('.card', { origin: 'bottom', interval: 150 });
+  sr.reveal('.faculty-card', { origin: 'bottom', interval: 120 });
+  sr.reveal('.campus-photo img', { origin: 'bottom', interval: 100 });
+
+  /* ===== SKILLS ===== */
+  sr.reveal('.skill-card', {
+    origin: 'bottom',
+    interval: 120
+  });
+
+  /* ===== PROJECTS ===== */
+  sr.reveal('.project-card', {
+    origin: 'bottom',
+    interval: 150
+  });
+
+  /* ===== CONTACT ===== */
+  sr.reveal('#contact', { origin: 'bottom' });
+
+  /* ===== FOOTER ===== */
+  sr.reveal('.footer-section', {
+    origin: 'bottom',
+    interval: 120
+  });
 
        // == navbar ==
 let menu = document.getElementById("menu");
