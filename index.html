@@ -587,7 +587,10 @@ flex-direction:column;
       }
      
       .faculty{
-      display:flex;
+     
+      display:grid;
+     grid-template-columns:repeat(3, 1fr);       
+  
       justify-content:space-around;
       row-gap:50px;
       flex-wrap:wrap;
@@ -677,8 +680,9 @@ flex-direction:column;
     
       
       .faculty{
-      display:flex;
-      flex-direction:column;
+         
+    grid-template-columns:repeat(1, 1fr);       
+  
       justify-content:space-around;
       align-items:center;
       gap:30px;
