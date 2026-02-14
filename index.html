@@ -1170,7 +1170,7 @@ flex-direction:column;
   <section class="hero"  id="hero" >
   <div class="hero-text">
     <h1>Hello, I'm <strong>Arya</strong></h1>
-    <h2>Fullstack web developer</h2>
+    <h2>i'm passinate about <span id="element"></span></h2>
    <div class="hero-buttons">
     <a href="Anshuman.resume.jpg" class="btn" download=""  target="_blank">Download resume <i class="fa-solid fa-download"></i></a>
     <a href="#contact" class="btn">Contact me</a></div>
@@ -1580,7 +1580,18 @@ flex-direction:column;
     </footer>
 </body>
 <script src="https://unpkg.com/scrollreveal"></script>
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 <script type="text/javascript">
+             /* type script */
+      var typed = new Typed('#element', {
+  strings: ['web developer',  'Video Editor','web designer','frontend developer'],
+  typeSpeed: 50,
+ backSpeed: 50,
+  backDelay: 1000,
+  loop: true
+});
+
+
 /* == scrollbar == */
   const sr = ScrollReveal({
     distance: '50px',
